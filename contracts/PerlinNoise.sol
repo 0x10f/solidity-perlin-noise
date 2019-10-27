@@ -59,10 +59,10 @@ library PerlinNoise {
         int256 u;
         int256 v;
 
-        v = ptable(scratch[0]);  // ptable(scratch[0])   ptable(scratch[0] + 1)
+        v = ptable(scratch[0]);
 
-        u = ptable((v >> 8  ) + scratch[1]); // scratch[3]  scratch[4]
-        v = ptable((v & 0xff) + scratch[1]); // scratch[5]  scratch[6]
+        u = ptable((v >> 8  ) + scratch[1]);
+        v = ptable((v & 0xff) + scratch[1]);
 
         scratch[3] = ptable((u >> 8  ) + scratch[2]);
         scratch[4] = ptable((u & 0xff) + scratch[2]);
@@ -178,7 +178,9 @@ library PerlinNoise {
     }
 
     /**
-     * @notice Gets a subsequent values in the permutation table at an index.
+     * @notice Gets a subsequent values in the permutation table at an index. The values are encoded
+     *         into a single 24 bit integer with the  value at the specified index being the most
+     *         significant 12 bits and the subsequent value being the least significant 12 bits.
      *
      * @param i the index in the permutation table.
      *
@@ -704,7 +706,9 @@ library PerlinNoise {
     }
 
     /**
-     * @notice Gets subsequent values in the fade table at an index.
+     * @notice Gets subsequent values in the fade table at an index. The values are encoded
+     *         into a single 16 bit integer with the value at the specified index being the most
+     *         significant 8 bits and the subsequent value being the least significant 8 bits.
      *
      * @param i the index in the fade table.
      *
