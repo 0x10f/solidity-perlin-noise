@@ -17,7 +17,9 @@ printBranch(0, 255);
 
 function printBranch(low, high) {
     if (high - low < 3) {
-        console.log("if (i == %d) { return %d; } else { return %d; }", low, P[low], P[high]);
+        const a = P[low]  << 8 | P[low  + 1 & 0xff];
+        const b = P[high] << 8 | P[high + 1 & 0xff];
+        console.log("if (i == %d) { return %d; } else { return %d; }", low, a, b);
         return;
     }
 

@@ -45,9 +45,9 @@ const nf = (await PerlinNoise.noise2d.call(32768, 32768)).toNumber() / 65536;
 
 |Function | EVM Version | Gas (Execution) |  
 |---------|-------------|-----------------|
-| Deploy  | Petersburg  | 2,803,431       |
-| noise2d | Petersburg  | 3658            |
-| noise3d | Petersburg  | 9310            |
+| Deploy  | Petersburg  | 2,844,459       |
+| noise2d | Petersburg  | 2,651           |
+| noise3d | Petersburg  | 6,403           |
 
 ## License
 

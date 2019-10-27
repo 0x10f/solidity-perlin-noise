@@ -10,6 +10,30 @@ contract("PerlinNoise", () => {
         this.noise = await PerlinNoiseMock.new();
     });
 
+    describe("noise2d", () => {
+        it("puts the lotion in the basket", async function() {
+            for (let y = 0; y < 32; y++) {
+                for (let x = 0; x < 32; x++) {
+                    let v = await this.noise.noise2d.call(x, y);
+                    process.stdout.write(util.format("%d", v.toNumber()) + ",");
+                }
+                process.stdout.write("\n");
+            }
+        });
+    });
+
+    describe("noise3d", () => {
+        it("puts the lotion in the basket", async function() {
+           for (let y = 0; y < 32; y++) {
+               for (let x = 0; x < 32; x++) {
+                   let v = await this.noise.noise3d.call(x, y, 0);
+                   process.stdout.write(util.format("%d", v.toNumber()) + ",");
+               }
+               process.stdout.write("\n");
+           }
+        });
+    });
+
     describe("permutation table", () => {
         it("correctly returns the value for each index", async function() {
             let p = [
