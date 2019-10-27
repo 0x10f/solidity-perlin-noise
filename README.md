@@ -43,11 +43,13 @@ const nf = (await PerlinNoise.noise2d.call(32768, 32768)).toNumber() / 65536;
 
 ## Costs
 
-|Function | EVM Version | Gas (Execution) |  
-|---------|-------------|-----------------|
-| Deploy  | Petersburg  | 2,844,459       |
-| noise2d | Petersburg  | 2,651           |
-| noise3d | Petersburg  | 6,403           |
+| Function | EVM Version | Gas\*     |  
+|----------|-------------|-----------|
+| Deploy   | Petersburg  | 2,844,459 |
+| noise2d  | Petersburg  | 2,651     |
+| noise3d  | Petersburg  | 6,403     |
+
+\*Deployment gas cost is the entire estimated transaction amount, all other values are only the execution cost.
 
 ## License
 
